@@ -7,7 +7,7 @@ import StickyCTABar from '../UI/StickyCTABar';
 
 const Layout: React.FC = () => {
   return (
-    <div className="flex flex-col min-h-screen pb-[60px] md:pb-0">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         <Outlet />

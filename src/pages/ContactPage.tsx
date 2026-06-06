@@ -1,7 +1,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import SEO from '../components/SEO/SEO';
-import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaWhatsapp, FaUser, FaInfoCircle, FaBuilding, FaPaperPlane } from 'react-icons/fa';
 
 interface ContactFormInputs {
   name: string;
@@ -20,151 +20,198 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="py-12 bg-gray-50">
+    <div className="py-20 bg-slate-50/30 bg-grid-pattern relative overflow-hidden">
       <SEO 
-        title="Contact Us" 
-        description="Get in touch with ULTRA DEEP CLEAN EXPERTS. Call, email, or WhatsApp us for professional deep cleaning services in Hyderabad."
+        title="Contact Us – Book Deep Cleaning in Hyderabad" 
+        description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
+        ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
       />
       
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Background blobs */}
+      <div className="bg-orb w-[300px] h-[300px] bg-red-500/10 top-20 -left-10 animate-float"></div>
+      <div className="bg-orb w-[450px] h-[450px] bg-slate-300/20 bottom-10 -right-20 animate-pulse-soft"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl font-bold mb-6">Contact <span className="text-primary">Us</span></h1>
-          <p className="text-xl text-gray-600">
-            We're here to help. Reach out to us for any inquiries or to book a service.
+          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Get in Touch</span>
+          <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">Contact Our Team</h1>
+          <p className="text-slate-600 text-base sm:text-lg">
+            Reach out to our customer support for custom cleaning quotes, school/hospital checklists, or schedules.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Details */}
-          <div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mb-8">
-              <h3 className="text-2xl font-bold mb-8">Get In Touch</h3>
+        <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
+          {/* Contact Details & Map */}
+          <div className="flex flex-col gap-8">
+            <div className="bg-white p-8 rounded-3xl shadow-soft border border-slate-100">
+              <h3 className="text-xl font-bold mb-8 font-heading text-slate-900 border-l-2 border-primary pl-3">
+                Quick Contact Channels
+              </h3>
               
               <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
-                    <FaMapMarkerAlt className="text-xl text-primary" />
+                {[
+                  { title: 'Address', detail: 'Madhapur, Hyderabad, Telangana, India', icon: <FaMapMarkerAlt /> },
+                  { 
+                    title: 'Phone Numbers', 
+                    detail: (
+                      <div className="flex flex-col">
+                        <a href="tel:+916309365673" className="hover:text-primary transition-colors font-semibold">+91 6309365673</a>
+                        <a href="tel:+919908265673" className="hover:text-primary transition-colors font-semibold">+91 9908265673</a>
+                      </div>
+                    ),
+                    icon: <FaPhoneAlt />
+                  },
+                  { 
+                    title: 'Email Address', 
+                    detail: <a href="mailto:Knaresh990826@gmail.com" className="hover:text-primary transition-colors break-all font-semibold">Knaresh990826@gmail.com</a>,
+                    icon: <FaEnvelope />
+                  }
+                ].map((item, idx) => (
+                  <div key={idx} className="flex gap-4">
+                    <div className="w-11 h-11 bg-red-50 border border-red-100 rounded-xl flex items-center justify-center flex-shrink-0 text-primary">
+                      {item.icon}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-sm text-slate-800 uppercase tracking-wider mb-1">{item.title}</h4>
+                      <div className="text-slate-600 text-sm leading-relaxed">{item.detail}</div>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Address</h4>
-                    <p className="text-gray-600">Madhapur, Hyderabad,<br />Telangana, India</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
-                    <FaPhoneAlt className="text-xl text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Phone Numbers</h4>
-                    <p className="text-gray-600">
-                      <a href="tel:+916309365673" className="hover:text-primary block">+91 6309365673</a>
-                      <a href="tel:+919908265673" className="hover:text-primary block">+91 9908265673</a>
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center flex-shrink-0">
-                    <FaEnvelope className="text-xl text-primary" />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-lg">Email Address</h4>
-                    <p className="text-gray-600">
-                      <a href="mailto:Knaresh990826@gmail.com" className="hover:text-primary">Knaresh990826@gmail.com</a>
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
 
-            <div className="bg-accent text-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold mb-4">Chat With Us Instantly</h3>
-              <p className="text-gray-300 mb-6">Have a quick question? Message us on WhatsApp for an immediate response.</p>
+            {/* Google Map Embed */}
+            <div className="bg-white p-5 rounded-3xl shadow-soft border border-slate-100">
+              <h4 className="font-bold text-sm text-slate-800 uppercase tracking-wider mb-4 border-l-2 border-primary pl-3">Our service region</h4>
+              <div className="overflow-hidden rounded-2xl border border-slate-100 shadow-inner">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.2693822974956!2d78.3757!3d17.4485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI2JzU0LjYiTiA3OMKwMjInMzIuNSJF!5e0!3m2!1sen!2sin!4v1234567890"
+                  width="100%" 
+                  height="260" 
+                  style={{ border: 0 }} 
+                  allowFullScreen 
+                  loading="lazy"
+                  title="Our Service Area – Madhapur, Hyderabad"
+                />
+              </div>
+            </div>
+
+            <div className="bg-primary text-white p-8 rounded-3xl border border-red-700 shadow-lg relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full filter blur-[40px] pointer-events-none"></div>
+              <h3 className="text-lg font-bold mb-2 text-white font-heading">Need Fast Help?</h3>
+              <p className="text-red-100 text-xs leading-relaxed mb-6">WhatsApp us directly for free cleaning consultation and same-day slots.</p>
               <a 
                 href="https://wa.me/916309365673" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-success text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-bold w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-red-50 border border-white hover:shadow-glow transition-all duration-300 font-bold text-xs uppercase tracking-wider"
               >
-                <FaWhatsapp className="text-2xl" /> WhatsApp Now
+                <FaWhatsapp className="text-lg animate-pulse" /> 
+                <span>WhatsApp support</span>
               </a>
             </div>
           </div>
 
           {/* Contact Form */}
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h3 className="text-2xl font-bold mb-6">Send Us A Message</h3>
+          <div className="bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-soft">
+            <h3 className="text-xl font-bold mb-6 font-heading border-l-2 border-primary pl-3">
+              Send Direct Message
+            </h3>
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input 
-                  {...register("name", { required: "Name is required" })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                  placeholder="John Doe"
-                />
-                {errors.name && <span className="text-red-500 text-sm mt-1">{errors.name.message}</span>}
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Full Name</label>
+                <div className="relative">
+                  <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                    <FaUser className="text-sm" />
+                  </span>
+                  <input 
+                    {...register("name", { required: "Name is required" })}
+                    className="w-full pl-11 pr-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 text-slate-800 bg-slate-50/50 focus:bg-white"
+                    placeholder="John Doe"
+                  />
+                </div>
+                {errors.name && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.name.message}</span>}
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Mobile Number</label>
-                <input 
-                  {...register("mobile", { required: "Mobile number is required" })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                  placeholder="+91 xxxxxxxxxx"
-                />
-                {errors.mobile && <span className="text-red-500 text-sm mt-1">{errors.mobile.message}</span>}
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Mobile Number</label>
+                <div className="relative">
+                  <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                    <FaPhoneAlt className="text-sm" />
+                  </span>
+                  <input 
+                    {...register("mobile", { required: "Mobile number is required" })}
+                    className="w-full pl-11 pr-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 text-slate-800 bg-slate-50/50 focus:bg-white"
+                    placeholder="+91 xxxxxxxxxx"
+                  />
+                </div>
+                {errors.mobile && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.mobile.message}</span>}
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Service Required</label>
+                  <div className="relative">
+                    <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                      <FaInfoCircle className="text-sm" />
+                    </span>
+                    <select 
+                      {...register("service", { required: "Please select a service" })}
+                      className="w-full pl-11 pr-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 text-slate-800 bg-slate-50/50 focus:bg-white cursor-pointer"
+                    >
+                      <option value="">Select...</option>
+                      <option value="Home Deep Cleaning">Home Deep Cleaning</option>
+                      <option value="Office Cleaning">Office Cleaning</option>
+                      <option value="Sofa Cleaning">Sofa Cleaning</option>
+                      <option value="Bathroom Cleaning">Bathroom Cleaning</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                  {errors.service && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.service.message}</span>}
+                </div>
+
+                <div>
+                  <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Property Size</label>
+                  <div className="relative">
+                    <span className="absolute inset-y-0 left-0 pl-4 flex items-center text-slate-400">
+                      <FaBuilding className="text-sm" />
+                    </span>
+                    <select 
+                      {...register("property", { required: "Please select a property type" })}
+                      className="w-full pl-11 pr-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 text-slate-800 bg-slate-50/50 focus:bg-white cursor-pointer"
+                    >
+                      <option value="">Select size...</option>
+                      <option value="1 BHK">1 BHK</option>
+                      <option value="2 BHK">2 BHK</option>
+                      <option value="3 BHK">3 BHK</option>
+                      <option value="4+ BHK">4+ BHK</option>
+                      <option value="Villa">Villa</option>
+                      <option value="Commercial">Commercial/Office</option>
+                    </select>
+                  </div>
+                  {errors.property && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.property.message}</span>}
+                </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Service Required</label>
-                <select 
-                  {...register("service", { required: "Please select a service" })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                >
-                  <option value="">Select a service...</option>
-                  <option value="Home Deep Cleaning">Home Deep Cleaning</option>
-                  <option value="Office Cleaning">Office Cleaning</option>
-                  <option value="Sofa Cleaning">Sofa Cleaning</option>
-                  <option value="Bathroom Cleaning">Bathroom Cleaning</option>
-                  <option value="Other">Other</option>
-                </select>
-                {errors.service && <span className="text-red-500 text-sm mt-1">{errors.service.message}</span>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Property Type</label>
-                <select 
-                  {...register("property", { required: "Please select a property type" })}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                >
-                  <option value="">Select property type...</option>
-                  <option value="1 BHK">1 BHK</option>
-                  <option value="2 BHK">2 BHK</option>
-                  <option value="3 BHK">3 BHK</option>
-                  <option value="4+ BHK">4+ BHK</option>
-                  <option value="Villa">Villa</option>
-                  <option value="Commercial">Commercial/Office</option>
-                </select>
-                {errors.property && <span className="text-red-500 text-sm mt-1">{errors.property.message}</span>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Detailed Message</label>
                 <textarea 
                   {...register("message", { required: "Message is required" })}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition"
-                  placeholder="How can we help you?"
+                  className="w-full px-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 text-slate-800 bg-slate-50/50 focus:bg-white"
+                  placeholder="Tell us what needs deep cleaning or scrubbing..."
                 ></textarea>
-                {errors.message && <span className="text-red-500 text-sm mt-1">{errors.message.message}</span>}
+                {errors.message && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.message.message}</span>}
               </div>
 
               <button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 rounded-lg transition-colors shadow-md mt-4"
+                className="w-full bg-slate-900 hover:bg-primary text-white font-bold py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5 uppercase tracking-wider text-xs flex items-center justify-center gap-2"
               >
-                Submit via WhatsApp
+                <FaPaperPlane />
+                <span>Submit Inquiry</span>
               </button>
             </form>
           </div>

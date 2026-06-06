@@ -2,19 +2,100 @@
 
 @theme {
   --color-primary: #D71920;
-  --color-secondary: #FFFFFF;
-  --color-accent: #222222;
-  --color-success: #16A34A;
+  --color-primary-light: #FF4D55;
+  --color-accent: #1E1E1E;
+  --color-accent-light: #4A4A4A;
+  --color-success: #D71920;
+  --color-warning: #D71920;
   
-  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', system-ui, sans-serif;
+  
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-soft: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-spin-slow: spin 12s linear infinite;
+  
+  --shadow-soft: 0 4px 20px -2px rgba(215, 25, 32, 0.03), 0 0 3px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 40px -15px rgba(215, 25, 32, 0.08), 0 0 6px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(215, 25, 32, 0.3);
+  --shadow-glow-success: 0 0 20px rgba(215, 25, 32, 0.3);
 }
 
-@layer base {
-  body {
-    @apply bg-white text-accent font-sans antialiased;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold tracking-tight;
-  }
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 font-sans antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-heading font-bold tracking-tight;
+}
+
+/* Premium utility classes */
+.glass-premium {
+  @apply bg-white/90 backdrop-blur-xl border border-red-100 shadow-soft;
+}
+
+.glass-dark-premium {
+  @apply bg-primary/95 backdrop-blur-xl border border-white/20 shadow-2xl;
+}
+
+.text-gradient-primary {
+  @apply bg-gradient-to-r from-primary via-red-500 to-rose-500 bg-clip-text text-transparent;
+}
+
+.text-gradient-dark {
+  @apply bg-gradient-to-br from-slate-900 to-slate-700 bg-clip-text text-transparent;
+}
+
+.card-hover-effect {
+  @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover hover:border-red-100;
+}
+
+/* Background grid patterns */
+.bg-grid-pattern {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(215, 25, 32, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(215, 25, 32, 0.02) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-50;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-red-200 rounded-full hover:bg-red-300 transition-colors;
+}
+
+/* Custom Keyframe Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+/* Background blur decorative orbs */
+.bg-orb {
+  @apply absolute rounded-full filter blur-[80px] opacity-15 mix-blend-multiply pointer-events-none;
+}
+
+/* Anchor offset so sticky navbar doesn't cover scroll targets */
+[id] {
+  scroll-margin-top: 130px;
+}
+
+/* Extra-small screens (below 480px) */
+@media (max-width: 479px) {
+  .xs\:flex-row { flex-direction: row; }
 }
