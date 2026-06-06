@@ -38,7 +38,7 @@ const GalleryPage: React.FC = () => {
               className="relative rounded-2xl overflow-hidden shadow-lg group"
             >
               <div className="absolute top-4 left-4 bg-accent text-white px-3 py-1 rounded text-sm font-bold z-10">Before</div>
-              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" alt="Before Cleaning" className="w-full h-80 object-cover filter grayscale" />
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2070&auto=format&fit=crop" alt="Before Cleaning" className="w-full h-80 object-cover filter grayscale" loading="lazy" />
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
@@ -47,7 +47,7 @@ const GalleryPage: React.FC = () => {
               className="relative rounded-2xl overflow-hidden shadow-lg group"
             >
               <div className="absolute top-4 left-4 bg-success text-white px-3 py-1 rounded text-sm font-bold z-10">After</div>
-              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop" alt="After Cleaning" className="w-full h-80 object-cover" />
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070&auto=format&fit=crop" alt="After Cleaning" className="w-full h-80 object-cover" loading="lazy" />
             </motion.div>
           </div>
         </div>
@@ -65,7 +65,7 @@ const GalleryPage: React.FC = () => {
                 transition={{ delay: idx * 0.1 }}
                 className="aspect-square rounded-xl overflow-hidden shadow-sm"
               >
-                <img src={img} alt={`Cleaning work showcase ${idx + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
+                <img src={img} alt={`Cleaning work showcase ${idx + 1}`} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" loading="lazy" />
               </motion.div>
             ))}
           </div>

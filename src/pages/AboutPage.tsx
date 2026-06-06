@@ -34,6 +34,7 @@ const AboutPage: React.FC = () => {
                 src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1974&auto=format&fit=crop" 
                 alt="Professional Cleaning Team" 
                 className="w-full h-full object-cover"
+                loading="lazy"
               />
             </div>
           </motion.div>

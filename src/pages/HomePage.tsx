@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCheckCircle, FaStar, FaBuilding, FaHome } from 'react-icons/fa';
 import SEO from '../components/SEO/SEO';
+import TestimonialsCarousel from '../components/Sections/TestimonialsCarousel';
 
 const HomePage: React.FC = () => {
   return (
@@ -131,6 +132,8 @@ const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+      {/* Testimonials */}
+      <TestimonialsCarousel />
     </div>
   );
 };
