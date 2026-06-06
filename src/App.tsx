@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Layout from './components/Layout/Layout';
+import ScrollToTop from './components/Layout/ScrollToTop';
 
 // Lazy load Pages
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -24,6 +25,7 @@ function App() {
   return (
     <HelmetProvider>
       <Router>
+        <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             <Route path="/" element={<Layout />}>
