@@ -5,7 +5,7 @@ import CompanyLogo from '../UI/CompanyLogo';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white text-slate-600 pt-20 pb-10 border-t border-red-100 shadow-inner">
+    <footer className="bg-white text-slate-600 pt-20 pb-10 border-t border-blue-100 shadow-inner">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Company Info */}
@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
               href="https://wa.me/916309365673" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="mt-6 flex items-center justify-center gap-2.5 bg-primary hover:bg-red-750 text-white py-3 px-5 rounded-full hover:shadow-glow transition-all duration-300 font-semibold text-sm hover:-translate-y-0.5"
+              className="mt-6 flex items-center justify-center gap-2.5 bg-primary hover:bg-blue-800 text-white py-3 px-5 rounded-full hover:shadow-glow transition-all duration-300 font-semibold text-sm hover:-translate-y-0.5"
             >
               <FaWhatsapp className="text-lg animate-pulse" /> 
               <span>Chat on WhatsApp</span>

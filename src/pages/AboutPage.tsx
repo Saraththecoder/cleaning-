@@ -50,7 +50,7 @@ const AboutPage: React.FC = () => {
       />
       
       {/* Background blobs */}
-      <div className="bg-orb w-[300px] h-[300px] bg-red-500/10 top-20 -left-10 animate-float"></div>
+      <div className="bg-orb w-[300px] h-[300px] bg-blue-500/10 top-20 -left-10 animate-float"></div>
       <div className="bg-orb w-[450px] h-[450px] bg-slate-300/20 bottom-10 -right-20 animate-pulse-soft"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -59,7 +59,7 @@ const AboutPage: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Our History</span>
+          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Our History</span>
           <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">About Our Company</h1>
           <p className="text-slate-655 text-base sm:text-lg">
             Delivering high-end professional cleaning and scrubbing services in Hyderabad since 2018.
@@ -99,13 +99,13 @@ const AboutPage: React.FC = () => {
             </div>
 
             <div className="grid sm:grid-cols-2 gap-4">
-              <div className="bg-red-50/50 p-6 rounded-2xl border border-red-100">
+              <div className="bg-blue-50/50 p-6 rounded-2xl border border-blue-100">
                 <h3 className="text-sm font-bold text-primary mb-2 uppercase tracking-wide">Our Mission</h3>
                 <p className="text-slate-650 text-xs leading-relaxed">
                   Providing professional, affordable, and high-quality deep cleaning services using advanced cleaning equipment and trained staff.
                 </p>
               </div>
-              <div className="bg-white p-6 rounded-2xl border border-red-100">
+              <div className="bg-white p-6 rounded-2xl border border-blue-100">
                 <h3 className="text-sm font-bold text-primary mb-2 uppercase tracking-wide">Our Vision</h3>
                 <p className="text-slate-650 text-xs leading-relaxed">
                   To become the most trusted deep cleaning service provider, delivering clean, healthy, and hygienic spaces for every customer.
@@ -120,7 +120,7 @@ const AboutPage: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-primary text-white rounded-3xl p-10 sm:p-14 shadow-2xl border border-red-700 text-center mb-24 relative overflow-hidden"
+          className="bg-primary text-white rounded-3xl p-10 sm:p-14 shadow-2xl border border-blue-700 text-center mb-24 relative overflow-hidden"
         >
           {/* background blur effect */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full filter blur-[60px] pointer-events-none"></div>
@@ -135,7 +135,7 @@ const AboutPage: React.FC = () => {
                   {value.icon}
                 </div>
                 <h4 className="font-bold text-sm mb-2 text-white leading-tight">{value.title}</h4>
-                <p className="text-red-100 text-xxs leading-relaxed">{value.desc}</p>
+                <p className="text-blue-100 text-xxs leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
@@ -149,7 +149,7 @@ const AboutPage: React.FC = () => {
           className="py-6 max-w-6xl mx-auto"
         >
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Our Crew</span>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Our Crew</span>
             <h2 className="text-2xl sm:text-3xl font-black mb-4 tracking-tight">Meet Our Specialists</h2>
             <p className="text-slate-655 text-sm">
               Highly trained, background-checked professionals committed to safety and hygiene.
@@ -167,7 +167,7 @@ const AboutPage: React.FC = () => {
                 className="bg-white border border-slate-100 rounded-3xl p-6 shadow-soft hover:shadow-hover hover:-translate-y-1.5 transition-all duration-300 flex flex-col items-center text-center group"
               >
                 {/* Initials Avatar */}
-                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-black text-xl mb-6 shadow-md border border-red-200 group-hover:bg-red-700 transition-colors duration-300">
+                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-black text-xl mb-6 shadow-md border border-blue-200 group-hover:bg-blue-700 transition-colors duration-300">
                   {member.initials}
                 </div>
                 

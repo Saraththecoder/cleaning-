@@ -71,14 +71,14 @@ const BookingPage: React.FC = () => {
       />
       
       {/* Glow Orbs */}
-      <div className="bg-orb w-[300px] h-[300px] bg-red-500/10 top-20 -left-10 animate-float"></div>
+      <div className="bg-orb w-[300px] h-[300px] bg-blue-500/10 top-20 -left-10 animate-float"></div>
       <div className="bg-orb w-[400px] h-[400px] bg-slate-300/20 bottom-10 -right-20 animate-pulse-soft"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row gap-12 items-start max-w-6xl mx-auto">
           {/* Booking Form */}
           <div className="w-full lg:w-2/3 bg-white p-8 sm:p-10 rounded-3xl border border-slate-100 shadow-soft">
-            <span className="text-primary font-bold text-xxs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-3.5 py-1 inline-block mb-3">Reservations</span>
+            <span className="text-primary font-bold text-xxs uppercase tracking-widest bg-blue-50 border border-blue-150/40 rounded-full px-3.5 py-1 inline-block mb-3">Reservations</span>
             <h1 className="text-3xl sm:text-4xl font-black mb-2 tracking-tight">Book Your Cleaning</h1>
             <p className="text-slate-500 text-sm mb-8">Secure your preferred date. We will coordinate details and confirm your slot via WhatsApp.</p>
             
@@ -96,7 +96,7 @@ const BookingPage: React.FC = () => {
                       placeholder="John Doe"
                     />
                   </div>
-                  {errors.name && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.name.message}</span>}
+                  {errors.name && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.name.message}</span>}
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Mobile Number</label>
@@ -110,7 +110,7 @@ const BookingPage: React.FC = () => {
                       placeholder="+91 xxxxxxxxxx"
                     />
                   </div>
-                  {errors.mobile && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.mobile.message}</span>}
+                  {errors.mobile && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.mobile.message}</span>}
                 </div>
               </div>
 
@@ -147,7 +147,7 @@ const BookingPage: React.FC = () => {
 
                     <option value="Other">Other Custom Service</option>
                   </select>
-                  {errors.service && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.service.message}</span>}
+                  {errors.service && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.service.message}</span>}
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Preferred Date</label>
@@ -161,7 +161,7 @@ const BookingPage: React.FC = () => {
                       className="w-full pl-11 pr-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 text-slate-800 bg-slate-50/50 focus:bg-white"
                     />
                   </div>
-                  {errors.date && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.date.message}</span>}
+                  {errors.date && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.date.message}</span>}
                 </div>
               </div>
 
@@ -178,12 +178,12 @@ const BookingPage: React.FC = () => {
                     placeholder="H.No, Street, Landmark, Area, Hyderabad"
                   ></textarea>
                 </div>
-                {errors.address && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.address.message}</span>}
+                {errors.address && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.address.message}</span>}
               </div>
 
               <button 
                 type="submit" 
-                className="w-full bg-primary hover:bg-red-700 text-white font-bold py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5 uppercase tracking-wider text-xs"
+                className="w-full bg-primary hover:bg-blue-700 text-white font-bold py-4 rounded-full transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5 uppercase tracking-wider text-xs"
               >
                 Send Request via WhatsApp
               </button>
@@ -192,7 +192,7 @@ const BookingPage: React.FC = () => {
 
           {/* Right Column details */}
           <div className="w-full lg:w-1/3 space-y-8">
-            <div className="bg-primary text-white p-8 rounded-3xl border border-red-700 shadow-lg relative overflow-hidden">
+            <div className="bg-primary text-white p-8 rounded-3xl border border-blue-700 shadow-lg relative overflow-hidden">
               {/* Background gradient */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full filter blur-[40px] pointer-events-none"></div>
 
@@ -209,14 +209,14 @@ const BookingPage: React.FC = () => {
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <FaCheckCircle className="text-white text-base flex-shrink-0" />
-                    <span className="text-red-100">{item}</span>
+                    <span className="text-blue-100">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="bg-red-50/50 border border-red-100 p-8 rounded-3xl flex flex-col gap-4">
-              <div className="w-12 h-12 bg-red-100/50 border border-red-200/55 rounded-xl flex items-center justify-center text-primary text-xl flex-shrink-0">
+            <div className="bg-blue-50/50 border border-blue-100 p-8 rounded-3xl flex flex-col gap-4">
+              <div className="w-12 h-12 bg-blue-100/50 border border-blue-200/55 rounded-xl flex items-center justify-center text-primary text-xl flex-shrink-0">
                 <FaShieldAlt />
               </div>
               <div>
@@ -224,7 +224,7 @@ const BookingPage: React.FC = () => {
                 <p className="text-slate-650 text-xs leading-relaxed mb-4">We accommodate same-day deep cleaning bookings subject to slot availability.</p>
                 <a 
                   href="tel:+916309365673" 
-                  className="inline-block text-center w-full bg-white border border-red-155 text-primary font-bold py-3.5 rounded-full text-xs uppercase tracking-wider hover:bg-red-50 hover:border-primary transition-all duration-300"
+                  className="inline-block text-center w-full bg-white border border-blue-200 text-primary font-bold py-3.5 rounded-full text-xs uppercase tracking-wider hover:bg-blue-50 hover:border-primary transition-all duration-300"
                 >
                   Call +91 6309365673
                 </a>

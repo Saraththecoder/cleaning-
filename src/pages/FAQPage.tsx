@@ -61,12 +61,12 @@ const FAQPage: React.FC = () => {
       />
       
       {/* Background blobs */}
-      <div className="bg-orb w-[350px] h-[350px] bg-red-500/10 top-20 -left-10 animate-float"></div>
+      <div className="bg-orb w-[350px] h-[350px] bg-blue-500/10 top-20 -left-10 animate-float"></div>
       <div className="bg-orb w-[400px] h-[400px] bg-slate-350/20 bottom-10 -right-20 animate-pulse-soft"></div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-4 py-1.5 inline-block mb-3">FAQ</span>
+          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-150/40 rounded-full px-4 py-1.5 inline-block mb-3">FAQ</span>
           <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">Frequently Asked Questions</h1>
           <p className="text-slate-655 text-base sm:text-lg">
             Find answers to commonly asked questions about our process, tools, booking dates, and policies.
@@ -122,18 +122,18 @@ const FAQPage: React.FC = () => {
         </div>
 
         {/* Bottom Banner Contact support */}
-        <div className="mt-16 bg-primary rounded-3xl p-8 sm:p-10 border border-red-700 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left relative overflow-hidden">
+        <div className="mt-16 bg-primary rounded-3xl p-8 sm:p-10 border border-blue-700 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left relative overflow-hidden">
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full filter blur-[40px] pointer-events-none"></div>
           <div>
             <h4 className="font-bold text-lg text-white font-heading">Still have questions?</h4>
-            <p className="text-red-100 text-xs mt-1 leading-relaxed">No problem. Message us on WhatsApp or call our team for support.</p>
+            <p className="text-blue-100 text-xs mt-1 leading-relaxed">No problem. Message us on WhatsApp or call our team for support.</p>
           </div>
           <div className="flex gap-3 flex-wrap justify-center">
             <a 
               href="https://wa.me/916309365673" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="bg-white text-primary font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-colors shadow-md flex items-center gap-2 hover:bg-red-50"
+              className="bg-white text-primary font-bold px-6 py-3 rounded-full text-xs uppercase tracking-wider transition-colors shadow-md flex items-center gap-2 hover:bg-blue-50"
             >
               WhatsApp Support
             </a>

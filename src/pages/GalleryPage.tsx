@@ -37,12 +37,12 @@ const GalleryPage: React.FC = () => {
       />
       
       {/* Background blobs */}
-      <div className="bg-orb w-[300px] h-[300px] bg-red-500/10 top-20 -left-10 animate-float"></div>
+      <div className="bg-orb w-[300px] h-[300px] bg-blue-500/10 top-20 -left-10 animate-float"></div>
       <div className="bg-orb w-[400px] h-[400px] bg-slate-300/20 bottom-10 -right-20 animate-pulse-soft"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Portfolio</span>
+          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Portfolio</span>
           <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">Our Work Gallery</h1>
           <p className="text-slate-655 text-base sm:text-lg">
             Witness the deep cleaning transformations. Real photos of residential, office, and scrubbing projects.
@@ -104,7 +104,7 @@ const GalleryPage: React.FC = () => {
               className={`px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-colors cursor-pointer border ${
                 activeFilter === filter.id 
                   ? 'bg-primary text-white border-primary shadow-sm' 
-                  : 'bg-white text-slate-600 border-slate-200 hover:border-red-205 hover:text-primary'
+                  : 'bg-white text-slate-600 border-slate-200 hover:border-blue-200 hover:text-primary'
               }`}
             >
               {filter.label}
@@ -135,8 +135,8 @@ const GalleryPage: React.FC = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-red-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="bg-primary text-white px-4 py-2.5 rounded-full font-bold text-xxs uppercase tracking-wider shadow-md hover:scale-102 transition-transform hover:bg-red-750">
+                  <div className="absolute inset-0 bg-blue-950/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="bg-primary text-white px-4 py-2.5 rounded-full font-bold text-xxs uppercase tracking-wider shadow-md hover:scale-102 transition-transform hover:bg-blue-800">
                       View details
                     </span>
                   </div>

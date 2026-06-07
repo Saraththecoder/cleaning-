@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-white border-b border-red-100 shadow-md backdrop-blur-md text-slate-800' 
+        ? 'bg-white border-b border-blue-100 shadow-md backdrop-blur-md text-slate-800' 
         : 'glass-premium text-slate-800'
     }`}>
 
@@ -77,7 +77,7 @@ const Navbar: React.FC = () => {
           <div className="hidden md:flex items-center">
             <Link
               to="/booking"
-              className="px-6 py-3 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 bg-primary text-white hover:bg-red-700 shadow-soft hover:shadow-glow"
+              className="px-6 py-3 rounded-full font-bold text-sm tracking-wider uppercase transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0 bg-primary text-white hover:bg-blue-700 shadow-soft hover:shadow-glow"
             >
               Book Cleaning
             </Link>
@@ -98,9 +98,9 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Nav overlay */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 top-[80px] bg-red-950/20 backdrop-blur-sm z-40 transition-opacity" onClick={() => setIsOpen(false)}>
+        <div className="md:hidden fixed inset-0 top-[80px] bg-blue-950/20 backdrop-blur-sm z-40 transition-opacity" onClick={() => setIsOpen(false)}>
           <div 
-            className="w-full bg-white shadow-2xl border-b border-red-50 p-6 flex flex-col gap-3 max-h-[80vh] overflow-y-auto"
+            className="w-full bg-white shadow-2xl border-b border-blue-50 p-6 flex flex-col gap-3 max-h-[80vh] overflow-y-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {navLinks.map((link) => {
@@ -112,7 +112,7 @@ const Navbar: React.FC = () => {
                   onClick={() => setIsOpen(false)}
                   className={`block px-4 py-3 rounded-xl font-bold text-base transition-all ${
                     active 
-                      ? 'bg-red-50 text-primary border-l-4 border-primary' 
+                      ? 'bg-blue-50 text-primary border-l-4 border-primary' 
                       : 'text-slate-700 hover:text-primary hover:bg-slate-50'
                   }`}
                 >
@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
             <Link
               to="/booking"
               onClick={() => setIsOpen(false)}
-              className="mt-4 block w-full text-center bg-primary text-white py-4 rounded-full font-bold text-base shadow-lg hover:bg-red-700 transition-colors"
+              className="mt-4 block w-full text-center bg-primary text-white py-4 rounded-full font-bold text-base shadow-lg hover:bg-blue-700 transition-colors"
             >
               Book Service Now
             </Link>

@@ -20,10 +20,10 @@ interface ServiceItem {
 
 const categoryColors: Record<string, { bg: string; text: string; border: string; badge: string }> = {
   residential: {
-    bg: 'bg-red-50',
+    bg: 'bg-blue-50',
     text: 'text-primary',
-    border: 'border-red-100',
-    badge: 'bg-red-100 text-red-700',
+    border: 'border-blue-100',
+    badge: 'bg-blue-100 text-blue-700',
   },
   commercial: {
     bg: 'bg-blue-50',
@@ -220,7 +220,7 @@ const ServicesPage: React.FC = () => {
       />
 
       {/* ─── Page Header ─── */}
-      <div className="bg-gradient-to-br from-[#8B0000] via-primary to-red-500 text-white py-16 sm:py-24 relative overflow-hidden">
+      <div className="bg-gradient-to-br from-[#0B1E6B] via-primary to-blue-500 text-white py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1974&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
         <div className="absolute bottom-0 left-0 w-[300px] h-[300px] rounded-full bg-white/5 blur-[80px] pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -230,7 +230,7 @@ const ServicesPage: React.FC = () => {
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 text-white tracking-tight">
             Our Cleaning Services
           </h1>
-          <p className="text-red-100 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-blue-100 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
             High-grade hygiene and cleaning solutions customized for every corner of Hyderabad.
           </p>
         </div>
@@ -328,7 +328,7 @@ const ServicesPage: React.FC = () => {
                         href={waLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-primary hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5"
+                        className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-primary hover:bg-blue-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5"
                       >
                         <FaWhatsapp className="text-base" />
                         Book via WhatsApp
@@ -358,7 +358,7 @@ const ServicesPage: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-[#8B0000] via-primary to-red-500 text-white p-8 sm:p-14 rounded-3xl shadow-2xl relative overflow-hidden"
+            className="bg-gradient-to-br from-[#0B1E6B] via-primary to-blue-500 text-white p-8 sm:p-14 rounded-3xl shadow-2xl relative overflow-hidden"
           >
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-[80px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full blur-[60px] pointer-events-none" />
@@ -370,7 +370,7 @@ const ServicesPage: React.FC = () => {
               <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight leading-tight mb-2">
                 Heavy-Duty Machinery We Use
               </h3>
-              <p className="text-red-100 text-sm sm:text-base">
+              <p className="text-blue-100 text-sm sm:text-base">
                 We bring professional deep cleaners, single discs, and steam extraction tools.
               </p>
             </div>
@@ -386,7 +386,7 @@ const ServicesPage: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-sm sm:text-base text-white mb-1 leading-snug">{item.title}</h4>
-                    <p className="text-red-100/80 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
+                    <p className="text-blue-100/80 text-xs sm:text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}

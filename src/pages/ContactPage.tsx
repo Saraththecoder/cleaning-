@@ -30,12 +30,12 @@ const ContactPage: React.FC = () => {
       />
       
       {/* Background blobs */}
-      <div className="bg-orb w-[300px] h-[300px] bg-red-500/10 top-20 -left-10 animate-float"></div>
+      <div className="bg-orb w-[300px] h-[300px] bg-blue-500/10 top-20 -left-10 animate-float"></div>
       <div className="bg-orb w-[450px] h-[450px] bg-slate-300/20 bottom-10 -right-20 animate-pulse-soft"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Get in Touch</span>
+          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Get in Touch</span>
           <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">Contact Our Team</h1>
           <p className="text-slate-600 text-base sm:text-lg">
             Reach out to our customer support for custom cleaning quotes, school/hospital checklists, or schedules.
@@ -70,7 +70,7 @@ const ContactPage: React.FC = () => {
                   }
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4">
-                    <div className="w-11 h-11 bg-red-50 border border-red-100 rounded-xl flex items-center justify-center flex-shrink-0 text-primary">
+                    <div className="w-11 h-11 bg-blue-50 border border-blue-100 rounded-xl flex items-center justify-center flex-shrink-0 text-primary">
                       {item.icon}
                     </div>
                     <div>
@@ -98,15 +98,15 @@ const ContactPage: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-primary text-white p-8 rounded-3xl border border-red-700 shadow-lg relative overflow-hidden">
+            <div className="bg-primary text-white p-8 rounded-3xl border border-blue-700 shadow-lg relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full filter blur-[40px] pointer-events-none"></div>
               <h3 className="text-lg font-bold mb-2 text-white font-heading">Need Fast Help?</h3>
-              <p className="text-red-100 text-xs leading-relaxed mb-6">WhatsApp us directly for free cleaning consultation and same-day slots.</p>
+              <p className="text-blue-100 text-xs leading-relaxed mb-6">WhatsApp us directly for free cleaning consultation and same-day slots.</p>
               <a 
                 href="https://wa.me/916309365673" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-red-50 border border-white hover:shadow-glow transition-all duration-300 font-bold text-xs uppercase tracking-wider"
+                className="inline-flex items-center justify-center gap-2 bg-white text-primary hover:bg-blue-50 border border-white hover:shadow-glow transition-all duration-300 font-bold text-xs uppercase tracking-wider"
               >
                 <FaWhatsapp className="text-lg animate-pulse" /> 
                 <span>WhatsApp support</span>
@@ -132,7 +132,7 @@ const ContactPage: React.FC = () => {
                     placeholder="John Doe"
                   />
                 </div>
-                {errors.name && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.name.message}</span>}
+                {errors.name && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.name.message}</span>}
               </div>
               
               <div>
@@ -147,7 +147,7 @@ const ContactPage: React.FC = () => {
                     placeholder="+91 xxxxxxxxxx"
                   />
                 </div>
-                {errors.mobile && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.mobile.message}</span>}
+                {errors.mobile && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.mobile.message}</span>}
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -169,7 +169,7 @@ const ContactPage: React.FC = () => {
                       <option value="Other">Other</option>
                     </select>
                   </div>
-                  {errors.service && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.service.message}</span>}
+                  {errors.service && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.service.message}</span>}
                 </div>
 
                 <div>
@@ -191,7 +191,7 @@ const ContactPage: React.FC = () => {
                       <option value="Commercial">Commercial/Office</option>
                     </select>
                   </div>
-                  {errors.property && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.property.message}</span>}
+                  {errors.property && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.property.message}</span>}
                 </div>
               </div>
 
@@ -203,7 +203,7 @@ const ContactPage: React.FC = () => {
                   className="w-full px-4 py-3.5 border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all duration-300 text-slate-800 bg-slate-50/50 focus:bg-white"
                   placeholder="Tell us what needs deep cleaning or scrubbing..."
                 ></textarea>
-                {errors.message && <span className="text-red-550 text-xs mt-1.5 block font-semibold">{errors.message.message}</span>}
+                {errors.message && <span className="text-rose-600 text-xs mt-1.5 block font-semibold">{errors.message.message}</span>}
               </div>
 
               <button 

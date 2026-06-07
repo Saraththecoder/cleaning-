@@ -33,7 +33,7 @@ const HomePage: React.FC = () => {
       ═══════════════════════════════════════ */}
       <section className="relative w-full bg-slate-50/50 bg-grid-pattern py-16 lg:py-24 flex items-center min-h-[85vh]">
         {/* Glow orbs */}
-        <div className="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-red-500/5 blur-[80px] pointer-events-none" />
+        <div className="absolute top-1/4 left-10 w-72 h-72 rounded-full bg-blue-500/5 blur-[80px] pointer-events-none" />
         <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-slate-200/20 blur-[100px] pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
@@ -62,7 +62,7 @@ const HomePage: React.FC = () => {
                 {/* Brand Badge */}
                 <motion.div
                   variants={itemVariants}
-                  className="inline-flex items-center gap-2 bg-red-50 border border-red-150/40 text-primary rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-6"
+                  className="inline-flex items-center gap-2 bg-blue-50 border border-blue-150/40 text-primary rounded-full px-4 py-1.5 text-xs font-bold uppercase tracking-widest mb-6"
                 >
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
@@ -100,7 +100,7 @@ const HomePage: React.FC = () => {
                 <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3.5 mb-8">
                   <Link
                     to="/booking"
-                    className="bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5"
+                    className="bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-xs uppercase tracking-wider text-center transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5"
                   >
                     Book Cleaning Now
                   </Link>
@@ -136,18 +136,18 @@ const HomePage: React.FC = () => {
       ═══════════════════════════════════════ */}
       <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
-        <div className="absolute top-0 left-0 w-[350px] h-[350px] rounded-full bg-red-50 blur-[100px] opacity-60 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-[350px] h-[350px] rounded-full bg-blue-50 blur-[100px] opacity-60 pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-20">
-            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-200/50 rounded-full px-4 py-1.5 inline-block mb-4">Simple Process</span>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-200/50 rounded-full px-4 py-1.5 inline-block mb-4">Simple Process</span>
             <h2 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight text-slate-900">How It Works</h2>
             <p className="text-slate-500 text-base sm:text-lg">Get your residence or workplace deep cleaned in 3 hassle-free steps.</p>
           </div>
 
           <div className="relative">
             {/* Connector line (desktop) */}
-            <div className="absolute top-[52px] left-[16%] right-[16%] h-[2px] bg-gradient-to-r from-red-100 via-primary/30 to-red-100 hidden lg:block z-0" />
+            <div className="absolute top-[52px] left-[16%] right-[16%] h-[2px] bg-gradient-to-r from-blue-100 via-primary/30 to-blue-100 hidden lg:block z-0" />
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 relative z-10">
               {[
@@ -161,9 +161,9 @@ const HomePage: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: idx * 0.2 }}
-                  className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 hover:border-red-200 flex flex-col items-center text-center group shadow-soft hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
+                  className="bg-white p-6 sm:p-8 rounded-2xl border border-slate-100 hover:border-blue-200 flex flex-col items-center text-center group shadow-soft hover:shadow-hover hover:-translate-y-1 transition-all duration-300"
                 >
-                  <div className="w-14 h-14 bg-red-50 text-primary rounded-full border border-red-100 flex items-center justify-center font-black text-lg mb-6 shadow-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
+                  <div className="w-14 h-14 bg-blue-50 text-primary rounded-full border border-blue-100 flex items-center justify-center font-black text-lg mb-6 shadow-sm group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300">
                     {item.step}
                   </div>
                   <h3 className="text-lg sm:text-xl font-bold mb-3 text-slate-900">{item.title}</h3>
@@ -181,7 +181,7 @@ const HomePage: React.FC = () => {
       <section className="py-20 sm:py-28 bg-slate-50/60 bg-grid-pattern relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14 sm:mb-20">
-            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-200/50 rounded-full px-4 py-1.5 inline-block mb-4">What We Offer</span>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-200/50 rounded-full px-4 py-1.5 inline-block mb-4">What We Offer</span>
             <h2 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight text-slate-900">Our Popular Services</h2>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed">Professional deep cleaning for every type of space — residential, commercial, and specialized.</p>
           </div>
@@ -201,7 +201,7 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.07 }}
-                className="bg-white rounded-3xl border border-slate-100 hover:border-red-200 shadow-soft hover:shadow-hover hover:-translate-y-1.5 transition-all duration-300 group flex flex-col overflow-hidden"
+                className="bg-white rounded-3xl border border-slate-100 hover:border-blue-200 shadow-soft hover:shadow-hover hover:-translate-y-1.5 transition-all duration-300 group flex flex-col overflow-hidden"
               >
                 {/* Image Header with Hover Scale */}
                 <div className="relative h-48 w-full overflow-hidden bg-slate-100">
@@ -234,7 +234,7 @@ const HomePage: React.FC = () => {
           <div className="text-center">
             <Link
               to="/services"
-              className="inline-flex items-center gap-2 bg-primary hover:bg-red-700 text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 bg-primary hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-glow hover:-translate-y-0.5"
             >
               View All Services <FaArrowRight />
             </Link>
@@ -248,7 +248,7 @@ const HomePage: React.FC = () => {
       <section className="py-20 sm:py-24 bg-white relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-200/50 rounded-full px-4 py-1.5 inline-block mb-4">Service Coverage</span>
+            <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-200/50 rounded-full px-4 py-1.5 inline-block mb-4">Service Coverage</span>
             <h2 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight text-slate-900">Areas We Serve in Hyderabad</h2>
             <p className="text-slate-600 text-base sm:text-lg">Providing prompt deep cleaning and scrubbing services in all major neighborhoods.</p>
           </div>

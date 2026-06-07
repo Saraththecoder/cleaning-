@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #D71920;
-  --color-primary-light: #FF4D55;
+  --color-primary: #1A56DB;
+  --color-primary-light: #60A5FA;
   --color-accent: #1E1E1E;
   --color-accent-light: #4A4A4A;
-  --color-success: #D71920;
-  --color-warning: #D71920;
+  --color-success: #10B981;
+  --color-warning: #F59E0B;
   
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Outfit', system-ui, sans-serif;
@@ -15,10 +15,10 @@
   --animate-pulse-soft: pulse-soft 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   --animate-spin-slow: spin 12s linear infinite;
   
-  --shadow-soft: 0 4px 20px -2px rgba(215, 25, 32, 0.03), 0 0 3px rgba(0, 0, 0, 0.02);
-  --shadow-hover: 0 20px 40px -15px rgba(215, 25, 32, 0.08), 0 0 6px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 20px rgba(215, 25, 32, 0.3);
-  --shadow-glow-success: 0 0 20px rgba(215, 25, 32, 0.3);
+  --shadow-soft: 0 4px 20px -2px rgba(26, 86, 219, 0.03), 0 0 3px rgba(0, 0, 0, 0.02);
+  --shadow-hover: 0 20px 40px -15px rgba(26, 86, 219, 0.08), 0 0 6px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 20px rgba(26, 86, 219, 0.3);
+  --shadow-glow-success: 0 0 20px rgba(16, 185, 129, 0.3);
 }
 
 /* Base resets & typography */
@@ -36,7 +36,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Premium utility classes */
 .glass-premium {
-  @apply bg-white/90 backdrop-blur-xl border border-red-100 shadow-soft;
+  @apply bg-white/90 backdrop-blur-xl border border-blue-100 shadow-soft;
 }
 
 .glass-dark-premium {
@@ -44,7 +44,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient-primary {
-  @apply bg-gradient-to-r from-primary via-red-500 to-rose-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-primary via-blue-500 to-indigo-500 bg-clip-text text-transparent;
 }
 
 .text-gradient-dark {
@@ -52,15 +52,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .card-hover-effect {
-  @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover hover:border-red-100;
+  @apply transition-all duration-300 hover:-translate-y-1.5 hover:shadow-hover hover:border-blue-100;
 }
 
 /* Background grid patterns */
 .bg-grid-pattern {
   background-size: 30px 30px;
   background-image: 
-    linear-gradient(to right, rgba(215, 25, 32, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(215, 25, 32, 0.02) 1px, transparent 1px);
+    linear-gradient(to right, rgba(26, 86, 219, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 86, 219, 0.02) 1px, transparent 1px);
 }
 
 /* Custom Scrollbar */
@@ -71,7 +71,7 @@ h1, h2, h3, h4, h5, h6 {
   @apply bg-slate-50;
 }
 ::-webkit-scrollbar-thumb {
-  @apply bg-red-200 rounded-full hover:bg-red-300 transition-colors;
+  @apply bg-blue-200 rounded-full hover:bg-blue-300 transition-colors;
 }
 
 /* Custom Keyframe Animations */

@@ -56,12 +56,12 @@ const PricingPage: React.FC = () => {
       />
       
       {/* Background blobs */}
-      <div className="bg-orb w-[400px] h-[400px] bg-red-500/10 top-10 right-10 animate-float"></div>
+      <div className="bg-orb w-[400px] h-[400px] bg-blue-500/10 top-10 right-10 animate-float"></div>
       <div className="bg-orb w-[300px] h-[300px] bg-slate-350/20 bottom-10 left-10 animate-pulse-soft"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-red-50 border border-red-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Rates & Packages</span>
+          <span className="text-primary font-bold text-xs uppercase tracking-widest bg-blue-50 border border-blue-150/40 rounded-full px-4 py-1.5 inline-block mb-3">Rates & Packages</span>
           <h1 className="text-3xl sm:text-4xl font-black mb-4 tracking-tight">Transparent Pricing</h1>
           <p className="text-slate-600 text-base sm:text-lg">
             No hidden costs. Premium deep cleaning services in Hyderabad at highly competitive rates.
@@ -118,8 +118,8 @@ const PricingPage: React.FC = () => {
                     rel="noopener noreferrer"
                     className={`block w-full py-4 rounded-full font-bold text-xs uppercase tracking-widest text-center transition-all duration-300 ${
                       plan.popular 
-                        ? 'bg-primary text-white hover:bg-red-700 shadow-lg hover:shadow-glow hover:-translate-y-0.5' 
-                        : 'bg-red-50 text-primary border border-red-100 hover:bg-primary hover:text-white hover:-translate-y-0.5'
+                        ? 'bg-primary text-white hover:bg-blue-700 shadow-lg hover:shadow-glow hover:-translate-y-0.5' 
+                        : 'bg-blue-50 text-primary border border-blue-100 hover:bg-primary hover:text-white hover:-translate-y-0.5'
                     }`}
                   >
                     Instant WhatsApp Booking
@@ -135,7 +135,7 @@ const PricingPage: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-primary text-white rounded-3xl p-10 sm:p-14 shadow-2xl border border-red-700 relative overflow-hidden"
+          className="bg-primary text-white rounded-3xl p-10 sm:p-14 shadow-2xl border border-blue-700 relative overflow-hidden"
         >
           {/* background blur effect */}
           <div className="absolute top-0 left-0 w-64 h-64 bg-white/10 rounded-full filter blur-[60px] pointer-events-none"></div>
@@ -143,7 +143,7 @@ const PricingPage: React.FC = () => {
           <div className="text-center mb-12">
             <span className="text-white font-bold text-xs uppercase tracking-widest bg-white/10 border border-white/20 rounded-full px-4 py-1.5 inline-block mb-3">Our Commitments</span>
             <h2 className="text-2xl sm:text-3xl font-black mb-2 tracking-tight !text-white">Our Service Commitments</h2>
-            <p className="text-red-100 text-sm">Every booking with us comes with strict safety and quality standards.</p>
+            <p className="text-blue-100 text-sm">Every booking with us comes with strict safety and quality standards.</p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -159,7 +159,7 @@ const PricingPage: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-base mb-1.5 text-white leading-tight">{item.title}</h4>
-                  <p className="text-red-100 text-xs leading-relaxed">{item.desc}</p>
+                  <p className="text-blue-100 text-xs leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}

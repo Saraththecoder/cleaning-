@@ -115,7 +115,7 @@ const TestimonialsCarousel: React.FC = () => {
                 className="w-full flex flex-col items-center"
               >
                 {/* Initials Avatar Circle */}
-                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-md border border-red-200">
+                <div className="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center font-bold text-xl mb-6 shadow-md border border-blue-200">
                   {testimonials[currentIndex].initials}
                 </div>
 
