@@ -188,12 +188,12 @@ const HomePage: React.FC = () => {
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-10">
             {[
-              { title: '1–3 BHK Deep Clean', desc: 'Complete home scrub-down — rooms, kitchen, bathrooms, windows, and floors.', icon: '🏠', id: '1bhk-deep-cleaning' },
-              { title: 'Sofa Cleaning', desc: 'Foam shampooing and wet extraction to remove stains, odor, and embedded dirt.', icon: '🛋️', id: 'sofa-cleaning' },
-              { title: 'Kitchen Degreasing', desc: 'Tile scrubbing, cabinet washing, chimney cleaning, and sink sanitization.', icon: '🍳', id: 'kitchen-cleaning' },
-              { title: 'Washroom Sanitization', desc: 'Acid descaling of tiles, glass, toilet, and fittings for a sparkling bathroom.', icon: '🚿', id: 'washroom-cleaning' },
-              { title: 'Office Cleaning', desc: 'Hygienic workspace — desks, carpets, restrooms, and eco-friendly floor scrubbing.', icon: '🏢', id: 'office-cleaning' },
-              { title: 'Hospital Cleaning', desc: 'Medical-grade disinfection for clinics, nursing homes, and hospital wards.', icon: '🏥', id: 'hospital-cleaning' },
+              { title: '1–3 BHK Deep Clean', desc: 'Complete home scrub-down — rooms, kitchen, bathrooms, windows, and floors.', icon: '🏠', image: '/living_room_clean.png', id: '1bhk-deep-cleaning' },
+              { title: 'Sofa Cleaning', desc: 'Foam shampooing and wet extraction to remove stains, odor, and embedded dirt.', icon: '🛋️', image: '/sofa_clean.png', id: 'sofa-cleaning' },
+              { title: 'Kitchen Degreasing', desc: 'Tile scrubbing, cabinet washing, chimney cleaning, and sink sanitization.', icon: '🍳', image: '/kitchen_clean.png', id: 'kitchen-cleaning' },
+              { title: 'Washroom Sanitization', desc: 'Acid descaling of tiles, glass, toilet, and fittings for a sparkling bathroom.', icon: '🚿', image: '/bathroom_clean.png', id: 'washroom-cleaning' },
+              { title: 'Office Cleaning', desc: 'Hygienic workspace — desks, carpets, restrooms, and eco-friendly floor scrubbing.', icon: '🏢', image: '/office_clean.png', id: 'office-cleaning' },
+              { title: 'Hospital Cleaning', desc: 'Medical-grade disinfection for clinics, nursing homes, and hospital wards.', icon: '🏥', image: '/hospital_clean.png', id: 'hospital-cleaning' },
             ].map((srv, idx) => (
               <motion.div
                 key={idx}
@@ -201,17 +201,32 @@ const HomePage: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: idx * 0.07 }}
-                className="bg-white p-6 sm:p-7 rounded-2xl border border-slate-100 hover:border-red-200 shadow-soft hover:shadow-hover hover:-translate-y-1.5 transition-all duration-300 group flex flex-col"
+                className="bg-white rounded-3xl border border-slate-100 hover:border-red-200 shadow-soft hover:shadow-hover hover:-translate-y-1.5 transition-all duration-300 group flex flex-col overflow-hidden"
               >
-                <div className="text-3xl sm:text-4xl mb-4">{srv.icon}</div>
-                <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-primary transition-colors mb-2">{srv.title}</h3>
-                <p className="text-sm text-slate-500 leading-relaxed flex-grow">{srv.desc}</p>
-                <Link
-                  to={`/services#${srv.id}`}
-                  className="mt-5 flex items-center gap-1.5 text-primary font-bold text-xs uppercase tracking-wider hover:gap-3 transition-all duration-200"
-                >
-                  Learn More <FaArrowRight className="text-[10px]" />
-                </Link>
+                {/* Image Header with Hover Scale */}
+                <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                  <img
+                    src={srv.image}
+                    alt={srv.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  {/* Floating Translucent Emoji Badge */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-2 rounded-full text-sm font-bold shadow-md flex items-center justify-center border border-white/50">
+                    <span className="text-lg leading-none">{srv.icon}</span>
+                  </div>
+                </div>
+
+                {/* Content section */}
+                <div className="p-6 sm:p-7 flex flex-col flex-grow">
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-primary transition-colors mb-2">{srv.title}</h3>
+                  <p className="text-sm text-slate-500 leading-relaxed flex-grow">{srv.desc}</p>
+                  <Link
+                    to={`/services#${srv.id}`}
+                    className="mt-5 flex items-center gap-1.5 text-primary font-bold text-xs uppercase tracking-wider hover:gap-3 transition-all duration-200"
+                  >
+                    Learn More <FaArrowRight className="text-[10px]" />
+                  </Link>
+                </div>
               </motion.div>
             ))}
           </div>

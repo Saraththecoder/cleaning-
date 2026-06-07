@@ -15,6 +15,7 @@ interface ServiceItem {
   features: string[];
   icon: React.ReactNode;
   popular?: boolean;
+  image: string;
 }
 
 const categoryColors: Record<string, { bg: string; text: string; border: string; badge: string }> = {
@@ -54,6 +55,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Thorough scrub-down, dusting, and sanitization of single-bedroom flats, covering the living room, kitchen, bathroom, and balcony.',
       category: 'residential',
       icon: <FaHome />,
+      image: '/living_room_clean.png',
       features: [
         'Kitchen deep degreasing',
         'Tile and toilet scrub-down',
@@ -68,6 +70,7 @@ const ServicesPage: React.FC = () => {
       category: 'residential',
       icon: <FaHome />,
       popular: true,
+      image: '/after_clean.png',
       features: [
         'Kitchen degreasing & cabinet cleaning',
         '2 Washrooms deep acid washing',
@@ -81,6 +84,7 @@ const ServicesPage: React.FC = () => {
       desc: 'High-end deep wash and stain extraction for spacious three-bedroom residences. Full sanitation of every room and storage cabinet.',
       category: 'residential',
       icon: <FaHome />,
+      image: '/luxury_living_room.png',
       features: [
         'Heavy-duty floor scrubbing & polishing',
         '3 Washrooms fully descaled',
@@ -94,6 +98,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Villas, independent bungalows, or empty flats before move-in/after renovation. Cleans paint dust, concrete stains, and grime.',
       category: 'residential',
       icon: <FaHome />,
+      image: '/villa_clean.png',
       features: [
         'Post-renovation dust extraction',
         'Floor scrubbing with Single Disc Machine',
@@ -107,6 +112,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Expert fabric or leather sofa shampooing. Uses vacuum extractors to lift embedded dirt, sweat stains, odors, and food spills.',
       category: 'specialized',
       icon: <FaCouch />,
+      image: '/sofa_clean.png',
       features: [
         'High-power dry vacuuming',
         'Organic chemical foam shampooing',
@@ -120,6 +126,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Focused degreasing of grease-laden kitchen tiles, slab stones, cabinets (interior/exterior), gas burners, and window meshes.',
       category: 'specialized',
       icon: <FaTools />,
+      image: '/kitchen_clean.png',
       features: [
         'Oil & carbon deposit removal',
         'Cabinet cleaning inside & out',
@@ -133,6 +140,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Deep acid descaling of tiles, shower glass, bathtubs, fittings, and toilets. Restores bathroom floors to sparkling clean.',
       category: 'specialized',
       icon: <FaToilet />,
+      image: '/bathroom_clean.png',
       features: [
         'Hard water scaling removal',
         'Mirror & glass scale scrubbing',
@@ -146,6 +154,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Maintain office hygiene, dust-free workspaces, sanitized meeting rooms, and spotless carpet surfaces for employees.',
       category: 'commercial',
       icon: <FaBuilding />,
+      image: '/office_clean.png',
       features: [
         'Desk, chair & computer screen wiping',
         'Carpet shampooing & dry vacuuming',
@@ -159,6 +168,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Medical-grade sanitization protocols for clinics, nursing homes, and wards. Kills bacteria and maintains clinical hygiene.',
       category: 'commercial',
       icon: <FaHospital />,
+      image: '/hospital_clean.png',
       features: [
         'EPA-approved disinfectant usage',
         'Odorless sanitization misting',
@@ -172,6 +182,7 @@ const ServicesPage: React.FC = () => {
       desc: 'Classrooms, sports rooms, libraries, and canteen cleaning. Provides a germ-free and dust-free environment for kids.',
       category: 'commercial',
       icon: <FaSchool />,
+      image: '/school_clean.png',
       features: [
         'Desk & bench sanitization',
         'Restroom deep scrubbing & disinfection',
@@ -268,67 +279,71 @@ const ServicesPage: React.FC = () => {
                       : `border-slate-100 hover:${cat.border}`
                   }`}
                 >
-                  {/* Popular Badge */}
-                  {srv.popular && (
-                    <div className="absolute top-0 right-6 transform -translate-y-1/2 bg-primary text-white text-[10px] uppercase tracking-widest font-extrabold px-3 py-1.5 rounded-full shadow-md z-10">
-                      ⭐ Most Popular
+                  {/* Image Header with Hover Scale */}
+                  <div className="relative h-48 w-full overflow-hidden bg-slate-100">
+                    <img
+                      src={srv.image}
+                      alt={srv.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    {/* Floating Category/Icon Badge */}
+                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full text-[10px] font-extrabold uppercase tracking-widest shadow-md flex items-center gap-1.5 border border-white/50 text-slate-800">
+                      <span className="text-sm">{srv.icon}</span>
+                      <span>{categoryLabels[srv.category].split(' ').slice(1).join(' ')}</span>
                     </div>
-                  )}
 
-                  {/* Card top – colored icon strip */}
-                  <div className={`px-6 sm:px-8 pt-6 sm:pt-8 pb-5 border-b ${cat.border} ${cat.bg}`}>
-                    <div className="flex items-start justify-between gap-4">
-                      {/* Icon circle */}
-                      <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${cat.bg} border ${cat.border} flex items-center justify-center text-xl sm:text-2xl ${cat.text} flex-shrink-0`}>
-                        {srv.icon}
+                    {/* Popular Badge */}
+                    {srv.popular && (
+                      <div className="absolute top-4 right-4 bg-primary text-white text-[10px] uppercase tracking-widest font-extrabold px-3 py-1.5 rounded-full shadow-md z-10">
+                        ⭐ Most Popular
                       </div>
-                      {/* Category pill */}
-                      <span className={`${cat.badge} text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full flex-shrink-0 mt-1`}>
-                        {categoryLabels[srv.category]}
-                      </span>
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-black text-slate-900 group-hover:text-primary transition-colors mt-4 leading-tight font-heading">
+                    )}
+                  </div>
+
+                  {/* Card Content & Details */}
+                  <div className="p-6 sm:p-8 flex flex-col flex-grow">
+                    <h3 className="text-lg sm:text-xl font-black text-slate-900 group-hover:text-primary transition-colors leading-tight font-heading mb-2">
                       {srv.title}
                     </h3>
-                    <p className="text-slate-500 text-sm leading-relaxed mt-2">{srv.desc}</p>
-                  </div>
+                    <p className="text-slate-500 text-sm leading-relaxed mb-6">{srv.desc}</p>
 
-                  {/* Features list */}
-                  <div className="px-6 sm:px-8 pt-5 pb-4 flex-grow">
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">What's Included</p>
-                    <ul className="space-y-2.5">
-                      {srv.features.map((feat, fIdx) => (
-                        <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm font-medium text-slate-700">
-                          <span className="w-4 h-4 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <FaCheck className="text-primary text-[8px]" />
-                          </span>
-                          <span className="leading-snug">{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                    {/* Features list */}
+                    <div className="flex-grow">
+                      <p className="text-[10px] font-bold uppercase tracking-widest text-slate-400 mb-3">What's Included</p>
+                      <ul className="space-y-2.5">
+                        {srv.features.map((feat, fIdx) => (
+                          <li key={fIdx} className="flex items-start gap-2.5 text-xs sm:text-sm font-medium text-slate-700">
+                            <span className="w-4 h-4 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <FaCheck className="text-primary text-[8px]" />
+                            </span>
+                            <span className="leading-snug">{feat}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                  {/* CTA buttons */}
-                  <div className="px-6 sm:px-8 pb-6 sm:pb-8 pt-4 flex flex-col gap-2.5 border-t border-slate-50">
-                    <a
-                      href={waLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-primary hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5"
-                    >
-                      <FaWhatsapp className="text-base" />
-                      Book via WhatsApp
-                    </a>
-                    <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
-                      <Link to="/pricing" className="flex items-center gap-1 hover:text-primary transition-colors font-medium">
-                        <FaStar className="text-[10px] text-primary" /> View Pricing
-                      </Link>
-                      <Link
-                        to={`/booking?service=${encodeURIComponent(srv.title)}`}
-                        className="flex items-center gap-1 hover:text-primary transition-colors font-medium"
+                    {/* CTA buttons */}
+                    <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col gap-2.5">
+                      <a
+                        href={waLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 w-full py-3 rounded-full bg-primary hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-glow hover:-translate-y-0.5"
                       >
-                        <FaCalendarCheck className="text-[10px] text-primary" /> Online Booking
-                      </Link>
+                        <FaWhatsapp className="text-base" />
+                        Book via WhatsApp
+                      </a>
+                      <div className="flex items-center justify-between text-xs text-slate-400 pt-1">
+                        <Link to="/pricing" className="flex items-center gap-1 hover:text-primary transition-colors font-medium">
+                          <FaStar className="text-[10px] text-primary" /> View Pricing
+                        </Link>
+                        <Link
+                          to={`/booking?service=${encodeURIComponent(srv.title)}`}
+                          className="flex items-center gap-1 hover:text-primary transition-colors font-medium"
+                        >
+                          <FaCalendarCheck className="text-[10px] text-primary" /> Online Booking
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
