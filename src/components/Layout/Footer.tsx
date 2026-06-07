@@ -110,7 +110,7 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-primary flex-shrink-0" />
-                <a href="mailto:Knaresh990826@gmail.com" className="hover:text-primary transition-colors break-all font-medium">Knaresh990826@gmail.com</a>
+                <a href="mailto:knareshdeepcleaning@gmail.com" className="hover:text-primary transition-colors break-all font-medium">knareshdeepcleaning@gmail.com</a>
               </li>
             </ul>
             <a 

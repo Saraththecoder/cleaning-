@@ -65,7 +65,7 @@ const ContactPage: React.FC = () => {
                   },
                   { 
                     title: 'Email Address', 
-                    detail: <a href="mailto:Knaresh990826@gmail.com" className="hover:text-primary transition-colors break-all font-semibold">Knaresh990826@gmail.com</a>,
+                    detail: <a href="mailto:knareshdeepcleaning@gmail.com" className="hover:text-primary transition-colors break-all font-semibold">knareshdeepcleaning@gmail.com</a>,
                     icon: <FaEnvelope />
                   }
                 ].map((item, idx) => (
