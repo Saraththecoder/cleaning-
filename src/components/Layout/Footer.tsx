@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Company Info */}
           <div className="flex flex-col gap-6">
             <Link to="/">
-              <CompanyLogo className="h-16 object-contain" />
+              <CompanyLogo className="transition-all duration-300" />
             </Link>
             <p className="text-sm leading-relaxed text-slate-500">
               Hyderabad's trusted deep cleaning experts with 8+ years of experience. Delivering immaculate hygiene, sanitization, and dirt-free properties.
