@@ -12,7 +12,7 @@ const HomePage: React.FC = () => {
     "@context": "https://schema.org",
     "@type": "CleaningService",
     "name": "Ultra Deep Clean Experts",
-    "image": "https://ultradeepcleanexperts.com/logo192.png",
+    "image": "https://ultradeepcleanexperts.com/logo.jpeg",
     "@id": "https://ultradeepcleanexperts.com/#cleaning-service",
     "url": "https://ultradeepcleanexperts.com",
     "telephone": "+916309365673",

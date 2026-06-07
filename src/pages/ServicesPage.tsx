@@ -219,7 +219,7 @@ const ServicesPage: React.FC = () => {
       "name": "Ultra Deep Clean Experts",
       "telephone": "+916309365673",
       "priceRange": "$$",
-      "image": "https://ultradeepcleanexperts.com/logo192.png",
+      "image": "https://ultradeepcleanexperts.com/logo.jpeg",
       "address": {
         "@type": "PostalAddress",
         "streetAddress": "Madhapur",
