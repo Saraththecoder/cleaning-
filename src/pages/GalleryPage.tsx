@@ -26,14 +26,35 @@ const GalleryPage: React.FC = () => {
     ? projects
     : projects.filter(item => item.category === activeFilter);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ultradeepcleanexperts.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Gallery",
+        "item": "https://ultradeepcleanexperts.com/gallery"
+      }
+    ]
+  };
+
   return (
     <div className="py-20 bg-slate-50/30 bg-grid-pattern relative overflow-hidden">
       <SEO 
         title="Before & After Gallery – Ultra Deep Clean Experts" 
         description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
-        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service, cleaning before after photos"
         ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
         ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
+        canonicalPath="/gallery"
+        schema={breadcrumbSchema}
       />
       
       {/* Background blobs */}
@@ -66,7 +87,7 @@ const GalleryPage: React.FC = () => {
               </div>
               <img 
                 src="/before_clean.png" 
-                alt="Before Cleaning" 
+                alt="Flooring and furniture before deep cleaning and stain removal in Hyderabad" 
                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" 
                 loading="lazy" 
               />
@@ -82,7 +103,7 @@ const GalleryPage: React.FC = () => {
               </div>
               <img 
                 src="/after_clean.png" 
-                alt="After Cleaning" 
+                alt="Spotless and polished flooring after professional deep cleaning services in Hyderabad" 
                 className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" 
                 loading="lazy" 
               />
@@ -131,7 +152,7 @@ const GalleryPage: React.FC = () => {
                 <div className="aspect-[4/3] overflow-hidden bg-slate-100 relative">
                   <img 
                     src={project.img} 
-                    alt={project.label} 
+                    alt={`${project.label} - Deep cleaning and scrubbing project in Hyderabad`} 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />

@@ -209,14 +209,76 @@ const ServicesPage: React.FC = () => {
   const filteredServices =
     activeTab === 'all' ? services : services.filter((srv) => srv.category === activeTab);
 
+  const servicesSchema = services.map(srv => ({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": `${srv.title} in Hyderabad`,
+    "description": srv.desc,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Ultra Deep Clean Experts",
+      "telephone": "+916309365673",
+      "priceRange": "$$",
+      "image": "https://ultradeepcleanexperts.com/logo192.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Madhapur",
+        "addressLocality": "Hyderabad",
+        "addressRegion": "Telangana",
+        "postalCode": "500081",
+        "addressCountry": "IN"
+      }
+    },
+    "areaServed": [
+      {
+        "@type": "AdministrativeArea",
+        "name": "Hyderabad"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Madhapur"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Gachibowli"
+      },
+      {
+        "@type": "AdministrativeArea",
+        "name": "Kondapur"
+      }
+    ],
+    "serviceType": "Deep Cleaning Services"
+  }));
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ultradeepcleanexperts.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Services",
+        "item": "https://ultradeepcleanexperts.com/services"
+      }
+    ]
+  };
+
   return (
     <div className="bg-white relative overflow-hidden">
       <SEO
         title="Our Cleaning Services – Ultra Deep Clean Experts Hyderabad"
         description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
-        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service, local deep cleaning services"
         ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
         ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
+        canonicalPath="/services"
+        schema={[breadcrumbSchema, ...servicesSchema]}
       />
 
       {/* ─── Page Header ─── */}
@@ -283,7 +345,7 @@ const ServicesPage: React.FC = () => {
                   <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                     <img
                       src={srv.image}
-                      alt={srv.title}
+                      alt={`${srv.title} - Professional deep cleaning services in Hyderabad`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* Floating Category/Icon Badge */}

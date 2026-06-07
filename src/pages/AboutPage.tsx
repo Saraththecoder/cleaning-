@@ -39,14 +39,35 @@ const AboutPage: React.FC = () => {
     }
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ultradeepcleanexperts.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": "https://ultradeepcleanexperts.com/about"
+      }
+    ]
+  };
+
   return (
     <div className="py-20 bg-slate-50/30 bg-grid-pattern relative overflow-hidden">
       <SEO 
         title="About Us – Ultra Deep Clean Experts Hyderabad" 
         description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
-        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service, about cleaning team"
         ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
         ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
+        canonicalPath="/about"
+        schema={breadcrumbSchema}
       />
       
       {/* Background blobs */}
@@ -76,7 +97,7 @@ const AboutPage: React.FC = () => {
           >
             <img 
               src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?q=80&w=1974&auto=format&fit=crop" 
-              alt="Professional Cleaning Team" 
+              alt="Professional deep cleaning team in Madhapur Hyderabad - Ultra Deep Clean Experts" 
               className="w-full h-full object-cover"
               loading="lazy"
             />

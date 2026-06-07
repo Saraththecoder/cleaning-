@@ -45,14 +45,51 @@ const PricingPage: React.FC = () => {
     }
   ];
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ultradeepcleanexperts.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Pricing",
+        "item": "https://ultradeepcleanexperts.com/pricing"
+      }
+    ]
+  };
+
+  const pricingSchema = {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Ultra Deep Clean Experts Pricing Packages",
+    "itemListElement": plans.map(plan => ({
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": `${plan.name} in Hyderabad`,
+        "description": plan.features.join(', ')
+      },
+      "price": plan.price === 'Custom Quote' ? undefined : plan.price.replace(/[^\d]/g, ''),
+      "priceCurrency": plan.price === 'Custom Quote' ? undefined : "INR"
+    }))
+  };
+
   return (
     <div className="py-20 bg-slate-550 bg-grid-pattern relative overflow-hidden">
       <SEO 
         title="Transparent Pricing – Deep Cleaning Services Hyderabad" 
         description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
-        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service, house cleaning cost hyderabad"
         ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
         ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
+        canonicalPath="/pricing"
+        schema={[breadcrumbSchema, pricingSchema]}
       />
       
       {/* Background blobs */}

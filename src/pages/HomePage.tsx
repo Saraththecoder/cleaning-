@@ -8,6 +8,66 @@ import SEO from '../components/SEO/SEO';
 import TestimonialsCarousel from '../components/Sections/TestimonialsCarousel';
 
 const HomePage: React.FC = () => {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "CleaningService",
+    "name": "Ultra Deep Clean Experts",
+    "image": "https://ultradeepcleanexperts.com/logo192.png",
+    "@id": "https://ultradeepcleanexperts.com/#cleaning-service",
+    "url": "https://ultradeepcleanexperts.com",
+    "telephone": "+916309365673",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Madhapur",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500081",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 17.4485,
+      "longitude": 78.3757
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    },
+    "sameAs": [
+      "https://facebook.com",
+      "https://instagram.com",
+      "https://twitter.com"
+    ],
+    "areaServed": [
+      "Hyderabad", "Madhapur", "Gachibowli", "Kondapur", "Banjara Hills", 
+      "Jubilee Hills", "Hitech City", "Kukatpally", "Miyapur", "Begumpet", 
+      "Secunderabad", "Ameerpet", "Dilsukhnagar", "LB Nagar", "Uppal", "KPHB"
+    ]
+  };
+
+  const webSiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Ultra Deep Clean Experts",
+    "url": "https://ultradeepcleanexperts.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://ultradeepcleanexperts.com/services?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
@@ -23,9 +83,11 @@ const HomePage: React.FC = () => {
       <SEO
         title="Ultra Deep Clean Experts – Professional Deep Cleaning in Hyderabad"
         description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
-        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service, house cleaning services hyderabad, deep cleaning service hyderabad"
         ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
         ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
+        canonicalPath="/"
+        schema={[localBusinessSchema, webSiteSchema]}
       />
 
       {/* ═══════════════════════════════════════
@@ -78,6 +140,7 @@ const HomePage: React.FC = () => {
                 >
                   Ultra Deep <br />
                   <span className="text-primary">Clean Experts</span>
+                  <span className="sr-only"> – Best Deep Cleaning Services in Hyderabad</span>
                 </motion.h1>
 
                 {/* Tagline */}
@@ -207,7 +270,7 @@ const HomePage: React.FC = () => {
                 <div className="relative h-48 w-full overflow-hidden bg-slate-100">
                   <img
                     src={srv.image}
-                    alt={srv.title}
+                    alt={`${srv.title} - Professional deep cleaning services in Hyderabad`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* Floating Translucent Emoji Badge */}

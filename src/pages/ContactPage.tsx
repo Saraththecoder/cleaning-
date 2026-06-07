@@ -14,6 +14,63 @@ interface ContactFormInputs {
 const ContactPage: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormInputs>();
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "CleaningService",
+    "name": "Ultra Deep Clean Experts",
+    "image": "https://ultradeepcleanexperts.com/logo192.png",
+    "@id": "https://ultradeepcleanexperts.com/#cleaning-service",
+    "url": "https://ultradeepcleanexperts.com",
+    "telephone": "+916309365673",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Madhapur",
+      "addressLocality": "Hyderabad",
+      "addressRegion": "Telangana",
+      "postalCode": "500081",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 17.4485,
+      "longitude": 78.3757
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ultradeepcleanexperts.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Contact",
+        "item": "https://ultradeepcleanexperts.com/contact"
+      }
+    ]
+  };
+
   const onSubmit = (data: ContactFormInputs) => {
     const text = `*New Contact Inquiry*%0A%0AName: ${data.name}%0AMobile: ${data.mobile}%0AService Required: ${data.service}%0AProperty Type: ${data.property}%0AMessage: ${data.message}`;
     window.open(`https://wa.me/916309365673?text=${text}`, '_blank');
@@ -24,9 +81,11 @@ const ContactPage: React.FC = () => {
       <SEO 
         title="Contact Us – Book Deep Cleaning in Hyderabad" 
         description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
-        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service, contact cleaning service hyderabad"
         ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
         ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
+        canonicalPath="/contact"
+        schema={[breadcrumbSchema, localBusinessSchema]}
       />
       
       {/* Background blobs */}

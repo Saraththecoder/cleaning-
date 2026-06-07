@@ -60,14 +60,35 @@ const BookingPage: React.FC = () => {
     window.open(`https://wa.me/916309365673?text=${text}`, '_blank');
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ultradeepcleanexperts.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Book Service",
+        "item": "https://ultradeepcleanexperts.com/booking"
+      }
+    ]
+  };
+
   return (
     <div className="py-20 bg-slate-50/30 bg-grid-pattern relative overflow-hidden">
       <SEO 
         title="Book Deep Cleaning – Ultra Deep Clean Experts Hyderabad" 
         description="Ultra Deep Clean Experts offers professional home, office, sofa, bathroom & kitchen deep cleaning in Hyderabad. 8+ years experience, 5000+ properties cleaned. Book now!"
-        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service"
+        keywords="deep cleaning Hyderabad, home cleaning Hyderabad, sofa cleaning, bathroom cleaning, office cleaning, deep cleaning service, schedule cleaning hyderabad"
         ogTitle="Ultra Deep Clean Experts – Deep Cleaning in Hyderabad"
         ogDescription="Professional deep cleaning for homes, offices & commercial spaces in Hyderabad. Trusted by 5000+ customers. Book via WhatsApp."
+        canonicalPath="/booking"
+        schema={breadcrumbSchema}
       />
       
       {/* Glow Orbs */}
